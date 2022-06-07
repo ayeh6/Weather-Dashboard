@@ -23,6 +23,7 @@ header h1 {
 }
 
 .weather-info {
+    display: block;
     margin-bottom: 20px;
 }
 
