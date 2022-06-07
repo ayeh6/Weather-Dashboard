@@ -2,6 +2,12 @@ h3 {
     font-weight: bold;
 }
 
+span {
+    padding: 5px;
+    border-radius: 7px;
+    color: white;
+}
+
 header {
     text-align: center;
 }
