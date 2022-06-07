@@ -1,12 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="./assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="jumbotron">
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="sidebar col-4">
+                <h3>Search for a City:</h3>
+                <input type="text" class="form-control form-control-lg">
+                <div class="search d-grid gap-2">
+                    <button type="button" class="btn btn-primary">Search</button>
+                </div>
+                <hr>
+                <div class="saved d-grid">
+                    <button type="button" class="btn btn-secondary">Austin</button>
+                    <button type="button" class="btn btn-secondary">Chicago</button>
+                    <button type="button" class="btn btn-secondary">New York</button>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="weather-info row card">
+                    <div class="card-body">
+                        <h3>City Name (4/20/2022)</h3>
+                        <p>Temp: 420</p>
+                        <p>Wind: 6.69</p>
+                        <p>Humidity: 69%</p>
+                        <p>UV Index: 0.42</p>
+                    </div>
+                </div>
+                <div class="forecast row">
+                    <h3>5-Day Forecast:</h3>
+                    <div class="col card">
+                        <div class="card-body">
+                            <h5>4/20/2022</h5>
+                            <p>🌤</p>
+                            <p>Temp: 73.72 °F</p>
+                            <p>Wind: 69.69 MPH</p>
+                            <p>Humidity: 69%</p>
+                        </div>
+                    </div>
+                    <div class="col card">
+                        <div class="card-body">
+                            <h5>4/20/2022</h5>
+                            <p>🌤</p>
+                            <p>Temp: 73.72 °F</p>
+                            <p>Wind: 69.69 MPH</p>
+                            <p>Humidity: 69%</p>
+                        </div>
+                    </div>
+                    <div class="col card">
+                        <div class="card-body">
+                            <h5>4/20/2022</h5>
+                            <p>🌤</p>
+                            <p>Temp: 73.72 °F</p>
+                            <p>Wind: 69.69 MPH</p>
+                            <p>Humidity: 69%</p>
+                        </div>
+                    </div>
+                    <div class="col card">
+                        <div class="card-body">
+                            <h5>4/20/2022</h5>
+                            <p>🌤</p>
+                            <p>Temp: 73.72 °F</p>
+                            <p>Wind: 69.69 MPH</p>
+                            <p>Humidity: 69%</p>
+                        </div>
+                    </div>
+                    <div class="col card">
+                        <div class="card-body">
+                            <h5>4/20/2022</h5>
+                            <p>🌤</p>
+                            <p>Temp: 73.72 °F</p>
+                            <p>Wind: 69.69 MPH</p>
+                            <p>Humidity: 69%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
