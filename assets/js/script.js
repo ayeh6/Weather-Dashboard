@@ -11,7 +11,7 @@ const excludeTag = `&exclude=`;
 const unitTag = `&units=`;
 const apiKey = `?appid=04a105d65920036e3fc2f97f7a3b2f34`;
 
-const geocodingURL = `http://api.openweathermap.org/geo/1.0/direct`;
+const geocodingURL = `https://api.openweathermap.org/geo/1.0/direct`;
 const qTag = `&q=`;
 
 let exclude = `minutely,hourly,alerts`;
@@ -29,7 +29,7 @@ function createCurrWeatherCard(cityState,data) { //create large card of current 
     h3.text(`${cityState} (${date})`);   //set date to header
 
     let img = $(`<img>`);   //get icon
-    let iconLink = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`;
+    let iconLink = `https://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`;
     img.attr('src',iconLink);
     h3.append(img);
 
@@ -92,7 +92,7 @@ function createForecastCards(data) {    //create cards for next 5 day forecast
         let date = dateObj.toLocaleDateString();
         h5Date.text(date);
 
-        let iconLink = `http://openweathermap.org/img/wn/${forecast[i].weather[0].icon}.png`;   //get icon
+        let iconLink = `https://openweathermap.org/img/wn/${forecast[i].weather[0].icon}.png`;   //get icon
         imgIcon.attr('src',iconLink);
 
         pTemp.text(`Temp: ${forecast[i].temp.day} °F`); //set text
