@@ -29,8 +29,9 @@ header h1 {
 }
 
 .weather-info {
-    display: block;
+    display: none;
     margin-bottom: 20px;
+    background-color: lightgrey;
 }
 
 .weather-info h3 {
@@ -42,7 +43,7 @@ header h1 {
 }
 
 .forecast {
-    display: flex;
+    display: none;
     justify-content: space-between;
 }
 
