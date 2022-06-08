@@ -17,7 +17,7 @@ const qTag = `&q=`;
 let exclude = `minutely,hourly,alerts`;
 let units = `imperial`;
 
-function createCurrWeatherCard(city,data) { //create large card of current weather
+function createCurrWeatherCard(cityState,data) { //create large card of current weather
     currCardEl.empty(); //clear the card
 
     let card = $(`<div>`);  //new card
@@ -26,7 +26,7 @@ function createCurrWeatherCard(city,data) { //create large card of current weath
     let h3 = $(`<h3>`); //new header
     let dateObj = new Date(data.current.dt*1000);   //convert date from epoch
     let date = dateObj.toLocaleDateString();
-    h3.text(`${city} (${date})`);   //set date to header
+    h3.text(`${cityState} (${date})`);   //set date to header
 
     let img = $(`<img>`);   //get icon
     let iconLink = `http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png`;
@@ -103,14 +103,16 @@ function createForecastCards(data) {    //create cards for next 5 day forecast
     }
 }
 
-function getWeatherData(lat,lon,city) { //get weather data from api
+function getWeatherData(lat,lon,city,state) { //get weather data from api
     fetch(oneCallURL + apiKey + latTag + lat + lonTag + lon + excludeTag + exclude + unitTag + units)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        createCurrWeatherCard(city,data);   //set current weather card
+        let cityState = `${city}, ${state}`;
+        createCurrWeatherCard(cityState,data);   //set current weather card
         createForecastCards(data);  //set forecast cards
+        saveSearch(city);   //save search input
         showCards();    //reveal cards if not on screen
     });
 }
@@ -125,9 +127,7 @@ function getLatLon(city) {  //get lat lon data from api using city input
     .then(function(data) {
         lat = data[0].lat;
         lon = data[0].lon;
-        let title = `${data[0].name}, ${data[0].state}`;
-        getWeatherData(lat,lon,title);  //get weather data using lat lon, pass title through
-        saveSearch(data[0].name);   //save search input
+        getWeatherData(lat,lon,data[0].name,data[0].state);  //get weather data using lat lon, pass cityState through
     });
 }
 
@@ -184,6 +184,6 @@ searchInputEl.on(`keypress`,function(event) {   //on enter press
 
 $(document).on(`click`,`.btn-secondary`,function() {    //button listener for search history buttons
     getLatLon($(this).text());  //call function using button text
-})
+});
 
 renderSavedSearch();    //render search history on page load
