@@ -9,7 +9,7 @@ const latTag = `&lat=`;
 const lonTag = `&lon=`;
 const excludeTag = `&exclude=`;
 const unitTag = `&units=`;
-const apiKey = `?appid={YOUR_API_KEY}`;
+const apiKey = `?appid=04a105d65920036e3fc2f97f7a3b2f34`;
 
 const geocodingURL = `https://api.openweathermap.org/geo/1.0/direct`;
 const qTag = `&q=`;
